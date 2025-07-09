@@ -10,6 +10,11 @@ on:
       - synchronize
   merge_group:
     types: [checks_requested]
+  push:
+    branches:
+      # A branch prefix used by graphite's merge queue
+      # https://graphite.dev/docs/merge-queue-optimizations#end-user-experience-when-using-parallel-ci
+      - 'gtmq_**'
 
 jobs:
   validate-pr-title:
